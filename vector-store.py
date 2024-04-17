@@ -2,6 +2,9 @@
 import gemini
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_ai21 import AI21SemanticTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores.utils import DistanceStrategy
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
 def vectorize_save():
@@ -10,10 +13,6 @@ def vectorize_save():
     semantic_text_splitter = AI21SemanticTextSplitter()
     chunks = semantic_text_splitter.split_text(loader)
 
-
-    from langchain_community.vectorstores import FAISS
-    from langchain_community.vectorstores.utils import DistanceStrategy
-    from langchain_community.embeddings import HuggingFaceEmbeddings
 
     embeddings_model = HuggingFaceEmbeddings(
         model_name='jhgan/ko-sbert-nli',
