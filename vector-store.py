@@ -4,7 +4,7 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_ai21 import AI21SemanticTextSplitter
 
 
-def vectorize_save()
+def vectorize_save():
     loader = PyMuPDFLoader(pdf())
     data = loader.load()
     semantic_text_splitter = AI21SemanticTextSplitter()
