@@ -8,8 +8,6 @@ from langchain.memory import ConversationBufferMemory
 
 
 
-
-conversation = ConversationChain(llm=chat, memory=ConversationBufferMemory())
-
-
-conversation.run(enter())
+def memory(chat):
+    conversation = ConversationChain(llm=chat, memory=ConversationBufferMemory())
+    conversation.run(enter())
