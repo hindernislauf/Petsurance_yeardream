@@ -24,9 +24,23 @@ pip install tiktoken
 pip install langchain
 pip install langchain langchain-google-genai langchain-community langchainhub langchain-chroma bs4
 ```
-# 라이브러리 로드
 
 # Git 사용 참고사항
 
 - 현재 구조는 main/developer/개별 팀원입니다.
-- 각자 맡으신 
+
+### 브랜치 생성
+- Github에서 팀 페이지 상단의 'Branches' 클릭
+- 'New branch' 클릭
+- 'Source'를 Developer로 선택
+- 개별 브랜치 이름(닉네임) 입력 ==> Create ne brance
+
+### Git에 개별 브런치로 입장할 때
+- git pull 입력
+- git switch [브랜치 이름] ==> 개별 브랜치에 로그인 한다고 생각하시면 됩니다.
+
+### 수정한 내용 업로드
+- 수정 이후, git add 파일이름.py
+- git commit -m "뭘 바꿨는지"
+- git push
+
