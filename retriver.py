@@ -8,7 +8,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 
 if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyDoXQh75wHDJV4S3is1WqniPzCjzqwPwSU"
+    os.environ["GOOGLE_API_KEY"] = ""
 
 # web document를 가져오는 함수.
 loader = WebBaseLoader("")
