@@ -24,18 +24,3 @@ class Vector_store:
         return vectordb
     
     
-# if __name__ == "__main__":
-
-#     if "GOOGLE_API_KEY" not in os.environ:
-#         os.environ["GOOGLE_API_KEY"] = "AIzaSyDarfOpN-0E8Oa6uiI-etHkWfgWlOh9b-s"
-#     P = Pdf_Proccessor()
-#     text_list = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
-#     V_S = Vector_store()
-#     directory_path = "/home/student/workspace/gemini/project/chroma2_db"
-#     if os.path.isdir(directory_path):
-#         vectordb = V_S.load_vectordb(directory_path)
-#         print("yes")
-#     else:
-#         vectordb = V_S.make_vector_db(text_list, directory_path)
-#         print("make")
-#     # print(vectordb)
