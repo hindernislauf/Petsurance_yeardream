@@ -13,30 +13,29 @@ class Vector_store:
         pass
     
     #vecto
-    def make_vector_db(self, text, chunk_size = 1000, chunk_overlap = 200):
+    def make_vector_db(self, text_list, directory_path = "./chroma_db"):
 
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size = chunk_size, chunk_overlap = chunk_overlap) 
-        split = text_splitter.split_documents(text)
-        vectordb = Chroma.from_documents(documents= split,
-                                        embedding= GoogleGenerativeAIEmbeddings(model= "models/embedding-001")
-                                        )
+        vectordb = Chroma.from_texts(texts= text_list,
+                                embedding= GoogleGenerativeAIEmbeddings(model= "models/embedding-001")
+                                , persist_directory= directory_path)
+
         return vectordb
     
-    # def save_vectordb(self, vectordb, vector_name = "vector"):
-    #     with open(f'{vector_name}.pickle', 'wb') as f:
-    #         pickle.dump(vectordb, f, pickle.HIGHEST_PROTOCOL)
-
-    # def load_vectordb(self, vector_name = 'vector'):
-    #     with open('try.pickle', 'rb') as f:
-    #         vectordb = pickle.load(f)
-    #     return vectordb
+    def load_vectordb(self, directory_path = "./chroma_db"):
+        vectordb = Chroma(persist_directory=directory_path, embedding_function = GoogleGenerativeAIEmbeddings(model= "models/embedding-001"))
+        return vectordb
     
-if __name__ == "__main__":
+    
+# if __name__ == "__main__":
 
-    if "GOOGLE_API_KEY" not in os.environ:
-        os.environ["GOOGLE_API_KEY"] = "AIzaSyCx5DAM5VTvRqYwsyQWTaq9FB-GmLNkeys"
-    P = Pdf_Proccessor()
-    text = P.pdf_load("/home/student/workspace/langlab/pet.pdf")
-    V_S = Vector_store()
-    vectordb = V_S.make_vector_db(text)
-    print(vectordb)
+#     if "GOOGLE_API_KEY" not in os.environ:
+#         os.environ["GOOGLE_API_KEY"] = "AIzaSyDarfOpN-0E8Oa6uiI-etHkWfgWlOh9b-s"
+#     P = Pdf_Proccessor()
+#     text_list = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
+#     V_S = Vector_store()
+#     directory_path = "/home/student/workspace/gemini/project/chroma_db"
+#     if os.path.isdir(directory_path):
+#         vectordb = V_S.load_vectordb(directory_path)
+#     else:
+#         vectordb = V_S.make_vector_db(text_list, directory_path)
+#     print(vectordb)

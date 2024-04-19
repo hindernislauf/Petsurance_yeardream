@@ -9,29 +9,28 @@ from langchain_core.prompts import SystemMessagePromptTemplate, ChatPromptTempla
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 
-class Retriever:
+class Retrievers:
     def __init__(self) -> None:
         pass
 
-    def retrieve_document(self, vectordb, query, k = 5):
-        retriever = vectordb.as_retriever(k = k,
-                                        search_type="similarity_score_threshold",
-                                        #search_type='mmr',  
-                                        search_kwargs={"k": 2, "score_threshold": 0.5}  
-                                        )
-        docs  = retriever.get_relevant_documents(query)
-        return docs
+    def retrieve_as_retriever(self, vectordb,  k = 4):
+        retriever = vectordb.as_retriever(k = k)
+        # docs  = retriever.get_relevant_documents(query)
+        return retriever
     
-if __name__ == "__main__":
-    if "GOOGLE_API_KEY" not in os.environ:
-        os.environ["GOOGLE_API_KEY"] = "AIzaSyCx5DAM5VTvRqYwsyQWTaq9FB-GmLNkeys"
+    def format_docs(docs):
+        return "\n\n".join([d.page_content for d in docs])
 
-    # PDF 문서 처리 (pdf -> text)
-    P = Pdf_Proccessor()
-    text = P.pdf_load("/home/student/workspace/langlabprac/pet.pdf")
+# if __name__ == "__main__":
+#     if "GOOGLE_API_KEY" not in os.environ:
+#         os.environ["GOOGLE_API_KEY"] = ""
 
-    # text -> DB
-    V_S = Vector_store()
-    vectordb = V_S.make_vector_db(text)
-    docs = Retriever().retrieve_document(vectordb, "슬개골 알려줘")
-    print(docs)
+#     # PDF 문서 처리 (pdf -> text)
+#     P = Pdf_Proccessor()
+#     text = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
+
+#     # text -> DB
+#     V_S = Vector_store()
+#     vectordb = V_S.make_vector_db(text)
+#     docs = Retriever().retrieve_document(vectordb, "슬개골 알려줘")
+#     print(docs)
