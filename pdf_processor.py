@@ -19,8 +19,3 @@ class Pdf_Proccessor:
             return text_list
         except:
             return -1
-
-# if __name__ == "__main__":
-#     P = Pdf_Proccessor()
-#     text = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
-#     print(text)
