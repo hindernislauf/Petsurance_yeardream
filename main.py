@@ -28,7 +28,7 @@ V = Vis()
 V.pont_path(pont_path)
 
 
-api = "AIzaSyDarfOpN-0E8Oa6uiI-etHkWfgWlOh9b-s"
+api = ""
 Chain_r = Chain_Response(api)
 
 streamlit_run(Chain_r, company_dict,pdf_path,directory_path, img_path, V )
