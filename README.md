@@ -19,7 +19,7 @@
 ---
 ### 수행 기간 및 팀원 :  
 - 📆 수행기간: 2024.04.17 ~ 2024.04.19
-- ⭐ 팀원:
+- ⭐ 팀원
   
 | 강상우  | 송유창  | 신윤재  | 이유진  | 이진선  | 이진아  |
 |--------|--------|--------|--------|--------|--------|
@@ -27,7 +27,7 @@
 | [Github](https://github.com/allenkang92) | [Github](https://github.com/hindernislauf) | [Github](https://github.com/yoonjaeo)| [Github](https://github.com/Developer-Yujin)| [Github](https://github.com/Jinsun577)| [Github](https://github.com/ssukddeok) |
 ---
 ### repo structure : 
-####[만들기]
+
 ---
 ### Project Workflow 
 ---
@@ -62,24 +62,34 @@
     - 로직: 프롬프트와 LLM으로 구성된 LangChain을 invoke
 
 
-#### LangChain
+### LangChain
 - Chat model : gemini-1.5-pro-latest
 
 - Selenium 라이브러리 활용.
   - ex) ‘webdriver’, ‘Keys’, ‘By’, ‘WebDriverWait’, ‘expected_conditions’, ‘ChromeOptions’
 - Selenium 스크립트를 로컬에서 작성 후 BrowserStack에 전송하여 클라우드 서비스를 활용한 원격 웹드라이브 실행, 테스트 프로세스 구축
-- BrowserStack 사용 이유 : 다양한 브라우저와 운영체제 환경에서의 호환성 테스트를 위함
+- BrowserStack 사용: 다양한 브라우저와 운영체제 환경에서의 호환성 테스트를 위함
 - 보험 관련 랭체인 구축
   -  입력 받은 메인 주제로 LLM 출력
   -  메인 주제 입력 → LLM → 4개사 보험 비교와 보장내역 요약 출력
+
 
 -
 ## 3. 결과 및 프로젝트 회고
 ![image](https://github.com/hindernislauf/langlab/assets/166089376/90f95c53-30f7-4ca6-b744-ad491a3d8879)
 ![image](https://github.com/hindernislauf/langlab/assets/166089376/3065b1cf-0fbe-4af2-a904-9579119f8caa)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/d0c83b1d-db37-4ae3-bd76-28bf27c2944c)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/e07a0303-6f45-483c-8357-4548102718a2)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/ed7cb4e2-8d90-4261-9026-d019f8c5fb38)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/7c110b02-db79-4725-a9b9-506a9f2580bb)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/7e300bc6-eee6-45a9-90fc-eec5ab9cd781)
+
+
 
 
 ---
-#### 어려웠던 점
-#### 배운 점
-#### 보완할 점
+## 4. 러닝포인트
+
+#### ✅ 팀원들간의 레벨과 생각 등이 다른데, 사람언어로뿐만이 아니라 코드 및 문서 등으로 커뮤니케이션해야했던 점이 어려웠습니다. 
+#### ✅ 처음 기획 단계에서 각자의 역할 및 전체 코드 구성 등을 명확히 할수록 이후 프로세스가 윤활 해짐을 배웠습니다.
+#### ✅ main.py 디자인 정확도를 보안, 디벨롭 예정입니다. 
