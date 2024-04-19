@@ -17,7 +17,7 @@ class Crawler:
 
     def set_browserstack(self, os = 'Windows', osVersion = '10',
                         resolution = '1920x1080', sessionName = 'Bstack-[Python] langlab',
-                        userName = 'hindernislauf_RaUqDL', accessKey = '9CLc9A2Whb1V2CzEuzxi', debug = 'true'):
+                        userName = 'YOUR_BROWSERSTACK_NAMECODE', accessKey = 'YOUR_BSTACK_APIKEY', debug = 'true'):
         self.options = ChromeOptions()
     
         # BrowserStack에서 사용할 설정 추가
