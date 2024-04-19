@@ -30,43 +30,27 @@ class Gemini_create:
     # [
     #     ('system' , '{context} 안에서 답을 찾아줘') ,# 답변을 yes 아니면 no로만 해라 - System이
     #     MessagesPlaceholder(variable_name ='message') #위의 것을 어떤 변수로서 쓰겠다를 지정한 것 -> 그냥 이런식으로 사용됨
-    # ]
+    # ]Answer the question based only on the following context: 
     # )
-        template = """Answer the question based only on the following context: {context}
-
+        template = """{context} 에 있는 것으로만 답하고, 한국어로만 답해줘.
+                
                 Question: {question}
                 """
         
         prompt = ChatPromptTemplate.from_template(template)
         return prompt
     
+    def create_prompt_sum(self):
+        # template = """ 테이블 형식으로 만들수 있게 간결하게 대답해야해.
+        #         """
+        
+        prompt = ChatPromptTemplate.from_messages(
+    [
+        ('system' , "테이블 형식으로 만들수 있게 간결하게 대답해야해.") ,# 답변을 yes 아니면 no로만 해라 - System이
+        MessagesPlaceholder(variable_name ='message') #위의 것을 어떤 변수로서 쓰겠다를 지정한 것 -> 그냥 이런식으로 사용됨
 
-# if __name__ == "__main__":
-#     G = Gemini_create()
-#     api = ""
-#     G.load_api(api)
-
-#     chat = G.create_chat()
-#     prompt = G.create_prompt()
-#     chain = prompt | chat | StrOutputParser()
-
-#     # PDF 문서 처리 (pdf -> text)
-#     P = Pdf_Proccessor()
-#     text = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
-
-#     # text -> DB
-#     V_S = Vector_store()
-#     vectordb = V_S.make_vector_db(text)
-#     docs = Retriever().retrieve_document(vectordb, "슬개골 알려줘")
-#     print(docs)
-
-#     try:
-#         response = chain.invoke(
-#             {   'context' : docs,
-#                 'message' : [HumanMessage("슬개골 알려줘")] }
-#         )
-
-#         print(response)
-#     except:
-#         response = chat.invoke(input="슬개골 알려줘")
-#         print(response.content)
+    ]
+    )
+        # prompt = ChatPromptTemplate.from_template(template)
+        return prompt
+    
