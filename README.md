@@ -14,6 +14,8 @@
 #### 반려견을 보험 선택을 도와주는 4개 보험사 비교와 보장범위 축약
 ![image](https://github.com/hindernislauf/langlab/assets/166089376/4702b92b-40cf-44ed-8b06-a04aee0e3375)
 
+
+
 ---
 ### 수행 기간 및 팀원 :  
 - 📆 수행기간: 2024.04.17 ~ 2024.04.19
@@ -73,6 +75,10 @@
 
 -
 ## 3. 결과 및 프로젝트 회고
+![image](https://github.com/hindernislauf/langlab/assets/166089376/90f95c53-30f7-4ca6-b744-ad491a3d8879)
+![image](https://github.com/hindernislauf/langlab/assets/166089376/3065b1cf-0fbe-4af2-a904-9579119f8caa)
+
+
 ---
 #### 어려웠던 점
 #### 배운 점
