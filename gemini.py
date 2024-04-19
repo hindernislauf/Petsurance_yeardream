@@ -54,33 +54,3 @@ class Gemini_create:
         # prompt = ChatPromptTemplate.from_template(template)
         return prompt
     
-
-# if __name__ == "__main__":
-#     G = Gemini_create()
-#     api = ""
-#     G.load_api(api)
-
-#     chat = G.create_chat()
-#     prompt = G.create_prompt()
-#     chain = prompt | chat | StrOutputParser()
-
-#     # PDF 문서 처리 (pdf -> text)
-#     P = Pdf_Proccessor()
-#     text = P.pdf_load("/home/student/workspace/gemini/project/promy_petvely.pdf")
-
-#     # text -> DB
-#     V_S = Vector_store()
-#     vectordb = V_S.make_vector_db(text)
-#     docs = Retriever().retrieve_document(vectordb, "슬개골 알려줘")
-#     print(docs)
-
-#     try:
-#         response = chain.invoke(
-#             {   'context' : docs,
-#                 'message' : [HumanMessage("슬개골 알려줘")] }
-#         )
-
-#         print(response)
-#     except:
-#         response = chat.invoke(input="슬개골 알려줘")
-#         print(response.content)
