@@ -9,7 +9,7 @@ from langchain_core.runnables import RunnablePassthrough
 
 class Chain_Response:
     def __init__(self, api) -> None:
-        # api = "AIzaSyDarfOpN-0E8Oa6uiI-etHkWfgWlOh9b-s"
+        api = "api_key"
         self.G = Gemini_create()
         self.G.load_api(api)
 
